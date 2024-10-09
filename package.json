@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@orbs-network/ton-access": "^2.3.3",
+    "@prisma/client": "^5.20.0",
+    "@ton/core": "^0.58.1",
+    "@ton/crypto": "^3.3.0",
+    "@ton/ton": "^15.0.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.4",
+    "@types/socket.io": "^3.0.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "prisma": "^5.20.0",
+    "socket.io": "^4.8.0",
+    "ton-crypto": "^3.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

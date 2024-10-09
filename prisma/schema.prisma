@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:qifsoauwis@localhost:5432/coin" // it it example
+}
+
+model User {
+  id          Int     @id @default(autoincrement())
+  userName    String  @unique
+  userId      String  @unique
+  userAddr    String
+  inviteCode  String  @unique
+  referers    User[]  @relation("UserReferers") // Self-relation for referred users
+  invitedBy   User?   @relation("UserReferers", fields: [invitedById], references: [userId])
+  invitedById String?
+
+  history History[]
+
+  earning Float @default(0)
+
+  createdAt DateTime @default(now())
+}
+
+model GameRoom {
+  id          String   @id
+  creator     String
+  creatorAddr String
+  joiner      String?
+  joinerAddr  String?
+  amount      Float
+  choice      String
+  status      String   @default("waiting") // "waiting" or "in progress"
+  createdAt   DateTime @default(now())
+}
+
+model History {
+  id         Int      @id @default(autoincrement())
+  winnerName String
+  loserName  String
+  amount     Float
+  time       DateTime @default(now()) // Time when the game ended
+
+  User User[]
+}
