@@ -2,7 +2,7 @@
   "name": "backend",
   "type": "module",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "dependencies": {
     "@orbs-network/ton-access": "^2.3.3",
     "@prisma/client": "^5.20.0",
