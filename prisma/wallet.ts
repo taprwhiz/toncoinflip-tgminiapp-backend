@@ -1,10 +1,9 @@
-import pkg from '@ton/ton';
+import { TonClient, WalletContractV4, internal, TonClient4, Address } from "@ton/ton";
 import { mnemonicToPrivateKey } from 'ton-crypto';
 import { getHttpV4Endpoint } from '@orbs-network/ton-access';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const { WalletContractV4, TonClient4, internal, Address } = pkg || {};
 if (!WalletContractV4) {
     throw new Error("WalletContractV4 is not available. Check your imports.");
 }
