@@ -11,8 +11,5 @@
         "src": "/(.*)",
         "dest": "dist/index.js"
       }
-    ],
-    "cache": {
-        "node_modules": false
-    }
+    ]
 }
