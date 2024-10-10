@@ -32,7 +32,7 @@ expressApp.get("/history", async (req, res) => {
       where: {
         OR: [
           { winnerName: userName  },
-          { loserName: userName  }
+          { loserName: userName }
         ],
       }
     });
@@ -115,7 +115,7 @@ io.on("connection", (socket) => {
               }
             });
 
-            transfer(referer.userAddr, 0.25);
+            transfer(referer?.userAddr, 0.25);
           }
           const Id = generateGameId();
           
@@ -266,7 +266,7 @@ io.on("connection", (socket) => {
               }
             });
 
-            transfer(referer.userAddr, 0.25);
+            transfer(referer?.userAddr, 0.25);
           }
 
           const joinRoom = await prisma.gameRoom.update({
