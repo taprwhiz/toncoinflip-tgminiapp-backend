@@ -3,7 +3,7 @@ import { createServer } from "http";
 import { Server, Socket } from "socket.io";
 import { config } from "dotenv";
 import { PrismaClient } from "@prisma/client";
-import transfer from "./wallet.js";
+import transfer from "./prisma/wallet";
 
 const prisma = new PrismaClient();
 
@@ -31,8 +31,8 @@ expressApp.get("/history", async (req, res) => {
     const history = await prisma.history.findMany({
       where: {
         OR: [
-          { winnerName: userName  },
-          { loserName: userName }
+          { winnerName: userName as string },
+          { loserName: userName as string}
         ],
       }
     });
@@ -386,7 +386,7 @@ io.on("connection", (socket) => {
 // Use Next.js request handler for everything else
 
 // Start the server
-server.listen(port, (err) => {
+server.listen(port, (err? : any) => {
   if (err) throw err;
   console.log(`> Ready on http://localhost:${port}`);
 });

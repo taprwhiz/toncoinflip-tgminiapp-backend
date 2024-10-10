@@ -6,7 +6,7 @@ import {  getHttpV4Endpoint } from '@orbs-network/ton-access';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const transfer = async (dest, wager) => {
+const transfer = async (dest:any, wager:any) => {
     const endpoint = await getHttpV4Endpoint({ network: 'testnet' });
     const client = new TonClient4({ endpoint });//,apiKey:"a69840dc49e6cd344adb3d936395e0004be71d05e6f56315215ca3e80e38dc4e"}
     let mnemonics =(process.env.mnemonics || '').toString();
