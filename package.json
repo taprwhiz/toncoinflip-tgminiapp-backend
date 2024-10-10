@@ -7,6 +7,7 @@
     "@orbs-network/ton-access": "^2.3.3",
     "@prisma/client": "^5.20.0",
     "@ton/core": "^0.59.0",
+    "@ton/crypto": "^3.3.0",
     "@ton/ton": "^15.1.0",
     "@types/express": "^5.0.0",
     "@types/node": "^22.7.4",
